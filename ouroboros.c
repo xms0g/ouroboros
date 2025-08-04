@@ -6,6 +6,8 @@
 
 int changePermAddr(void* addr);
 void foo();
+void bar();
+void baz();
 
 int main() {
     void* fooPtr = (void*)foo;
@@ -19,12 +21,22 @@ int main() {
     memset(mainPtr, 0, fooPtr - mainPtr - 0x16);
     
     foo();
+    bar();
+    baz();
 
     printf("%s", "Eaten myself!\n");
     return 0;
 }
 
 void foo() {
+    printf("%s", "This will be eaten!\n");
+}
+
+void bar() {
+    printf("%s", "This will be eaten!\n");
+}
+
+void baz() {
     printf("%s", "This will be eaten!\n");
 }
 
