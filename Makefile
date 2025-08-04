@@ -5,7 +5,7 @@ TARGET = ouroboros
 all: $(TARGET)
 
 $(TARGET): ouroboros.c
-	$(CC) $(CFLAGS) -o $(TARGET) ouroboros.c
+	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY: all clean
 clean:
